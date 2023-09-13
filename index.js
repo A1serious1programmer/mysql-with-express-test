@@ -34,7 +34,7 @@ const port = process.env.PORT || 3000;
 app.use(cors());
 
 app.get('/', (req, res) => {
-  res.send('ok');
+  res.send('oksg');
 });
 
 app.listen(port, () => {
