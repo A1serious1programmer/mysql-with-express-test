@@ -26,10 +26,13 @@ app.get('/', function (req, res) {
 });*/
 
 const express = require('express');
+const cors = require('cors'); // Import the cors package
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
-// Define a route that sends "ok" as a response
+// Enable CORS for all routes
+app.use(cors());
+
 app.get('/', (req, res) => {
   res.send('ok');
 });
@@ -37,3 +40,4 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
   console.log(`Express server is running on port ${port}`);
 });
+
